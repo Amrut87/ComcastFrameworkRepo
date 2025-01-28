@@ -14,6 +14,7 @@ import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import com.aventstack.extentreports.reporter.configuration.Theme;
+import com.comcast.crm.generic.webdriverutility.UtilityClassObject;
 import com.comcast.crm.listenerutility.ListImpClass;
 
 @Listeners(com.comcast.crm.listenerutility.ListImpClass.class)
@@ -33,8 +34,9 @@ public class SampleReportTest extends ListImpClass {
 	public void createContactTest() {
 		
 		WebDriver driver = new ChromeDriver();
+		UtilityClassObject.setDriver(driver);
+
 		driver.get("http://49.249.28.218:8888/");
-		
 		
 		//Create test using the ExtentReports object (report)
 		ExtentTest test=report.createTest("createContactTest");
@@ -45,9 +47,9 @@ public class SampleReportTest extends ListImpClass {
 		if("HDFC".equals("HFDC")) {
 			test.log(Status.PASS,"contact is created");
 		}
-		else {
-			test.addScreenCaptureFromBase64String(filePath, "Error file");
-		}
+		/*
+		 * else { test.addScreenCaptureFromBase64String(filePath, "Error file"); }
+		 */
 		driver.close();
 	}
 	
