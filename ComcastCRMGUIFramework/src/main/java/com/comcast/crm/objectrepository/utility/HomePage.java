@@ -25,6 +25,10 @@ public class HomePage {
 	@FindBy(linkText="Products")
 	private WebElement productLink;
 
+	public WebElement getProductLink() {
+		return productLink;
+	}
+
 	@FindBy(xpath = ("//a[.='Contacts']"))
 	private WebElement contactsLink;
 
