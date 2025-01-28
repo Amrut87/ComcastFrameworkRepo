@@ -22,6 +22,8 @@ public class HomePage {
 	public WebElement getorgLink() {
 		return orgLink;
 	}
+	@FindBy(linkText="Products")
+	private WebElement productLink;
 
 	@FindBy(xpath = ("//a[.='Contacts']"))
 	private WebElement contactsLink;
