@@ -32,7 +32,7 @@ import com.comcast.crm.basetest.BaseClassForListener;
 	        System.out.println("Test Failed: " + result.getName());
 			String testName = result.getMethod().getMethodName();
 
-			TakesScreenshot ts= (TakesScreenshot) BaseClassForListener.browserAlt;
+			TakesScreenshot ts= (TakesScreenshot) BaseClassForListener.eDriver;
 
 			File srcFile = ts.getScreenshotAs(OutputType.FILE);
 

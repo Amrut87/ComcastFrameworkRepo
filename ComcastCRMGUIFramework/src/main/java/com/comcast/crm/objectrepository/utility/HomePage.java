@@ -52,6 +52,7 @@ public class HomePage {
 
 	public void signOut(WebDriver driver) {
 		WebDriverUtility wLib = new WebDriverUtility();
+		wLib.waitForPageToLoad(driver);
 		wLib.mouseMoveOnElement(driver, imgSrc);
 		//wLib.waitForElementClickable(driver, signOutLink, 10);
 		/*

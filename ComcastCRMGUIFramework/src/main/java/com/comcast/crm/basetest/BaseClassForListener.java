@@ -31,7 +31,7 @@ public class BaseClassForListener {
 	public DataBaseUtility dLib = new DataBaseUtility();
 
 	public WebDriver driver = null;
-	public static WebDriver browserAlt;
+	public static WebDriver eDriver;
 
 	@BeforeSuite(groups = { "smokeTest", "regressionTest" })
 	public void configBS() {
@@ -56,8 +56,8 @@ public class BaseClassForListener {
 		} else {
 			driver = new ChromeDriver();
 		}
-		browserAlt=driver;
 		UtilityClassObject.setDriver(driver);
+		eDriver=UtilityClassObject.getDriver();
 		driver.get(URL);
 		wLib.waitForPageToLoad(driver);
 	}

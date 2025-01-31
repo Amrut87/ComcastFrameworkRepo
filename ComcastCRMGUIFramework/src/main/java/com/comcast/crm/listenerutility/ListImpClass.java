@@ -7,6 +7,7 @@ import java.util.Date;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.WebDriver;
 import org.testng.ISuite;
 import org.testng.ISuiteListener;
 import org.testng.ITestContext;
@@ -26,7 +27,6 @@ import com.comcast.crm.generic.webdriverutility.UtilityClassObject;
 public class ListImpClass implements ITestListener, ISuiteListener {
 	public ExtentReports report;
 	public static ExtentTest test;
-
 	@Override
 	public void onStart(ISuite suite) {
 		// TODO Auto-generated method stub
@@ -89,7 +89,7 @@ public class ListImpClass implements ITestListener, ISuiteListener {
 		 * TakesScreenshot eDriver = (TakesScreenshot) BaseClassForListener.browserAlt;
 		 * System.out.println(eDriver);
 		 */
-		TakesScreenshot eDriver=(TakesScreenshot) UtilityClassObject.getDriver();
+		TakesScreenshot eDriver=(TakesScreenshot) BaseClassForListener.eDriver;
 		System.out.println(eDriver);
 		String filePath = eDriver.getScreenshotAs(OutputType.BASE64);
 		String time = new Date().toString().replace(" ", "_").replace(":", "_");

@@ -29,7 +29,7 @@ public class BaseClass {
 	public WebDriverUtility wLib = new WebDriverUtility();
 	public DataBaseUtility dLib = new DataBaseUtility();
 
-	public WebDriver driver = null;
+	public WebDriver driver;
 	public static WebDriver sDriver;
 
 	@BeforeSuite(groups = { "smokeTest", "regressionTest" })
@@ -56,15 +56,14 @@ public class BaseClass {
 		} else {
 			driver = new ChromeDriver();
 		}
-		sDriver=driver;
+		//sDriver=driver;
 		driver.get(URL);
 		
 		wLib.waitForPageToLoad(driver);
 	}
 
-	/*
-	 * @BeforeMethod(groups = { "smokeTest", "regressionTest" })
-	 */	public void configBM() throws Exception {
+	@BeforeMethod(groups = { "smokeTest", "regressionTest" })
+	 public void configBM() throws Exception {
 		System.out.println("===Login====");
 		String UN = fLib.getDataFromPropertiesFile("username");
 		String PWD = fLib.getDataFromPropertiesFile("password");
