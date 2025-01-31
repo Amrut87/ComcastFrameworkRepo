@@ -72,7 +72,7 @@ public class BaseClass {
 		//String PWD = fLib.getDataFromPropertiesFile("password");
 		String PASSWORD = System.getProperty("password"); //To accept mvn parameters from cmd
 		LoginPage lp = new LoginPage(driver);
-		lp.loginToApp(UN, PWD);
+		lp.loginToApp(UN, PASSWORD);
 	}
 
 	@AfterMethod(groups = { "smokeTest", "regressionTest" })
