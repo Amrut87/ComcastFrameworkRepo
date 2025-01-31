@@ -31,7 +31,7 @@ public class WebDriverUtility {
 
 	public void waitForPageToLoad(WebDriver driver) {
 		// driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 	}
 
 //Explicit wait #1	
@@ -72,8 +72,8 @@ public class WebDriverUtility {
 	}
 
 //Explicit wait #7
-	public void waitForElementClickable(WebDriver driver, WebElement element, Duration i) {
-		WebDriverWait wait = new WebDriverWait(driver, i);
+	public void waitForElementClickable(WebDriver driver, WebElement element, int i) {
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(i));
 		wait.until(ExpectedConditions.elementToBeClickable(element));
 	}
 

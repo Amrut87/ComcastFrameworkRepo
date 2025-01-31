@@ -38,4 +38,12 @@ public class OrganizationsPage {
 	public WebElement getSearchDD() {
 		return searchDD;
 	}
+	
+	@FindBy(xpath="//a[.='Contacts']")
+	private WebElement contactsLink;
+
+	public WebElement getContactsLink() {
+		return contactsLink;
+	}
+
 }
