@@ -45,9 +45,11 @@ public class BaseClass {
 	 
 	public void configBC( ) throws Exception {
 		System.out.println("===Launch the browser===");
-		String BROWSER = fLib.getDataFromPropertiesFile("browser");
-		//= browser;
-		String URL = fLib.getDataFromPropertiesFile("baseurl");
+		//String BROWSER = fLib.getDataFromPropertiesFile("browser"); //To accept values from the property file
+		String BROWSER = System.getProperty("browser"); //To accept mvn parameters from cmd
+				//= browser;
+		//String URL = fLib.getDataFromPropertiesFile("baseurl");
+		String URL = System.getProperty("url"); //To accept mvn parameters from cmd
 
 		if (BROWSER.equals("chrome")) {
 			driver = new ChromeDriver();
@@ -65,8 +67,10 @@ public class BaseClass {
 	@BeforeMethod(groups = { "smokeTest", "regressionTest" })
 	 public void configBM() throws Exception {
 		System.out.println("===Login====");
-		String UN = fLib.getDataFromPropertiesFile("username");
-		String PWD = fLib.getDataFromPropertiesFile("password");
+		//String UN = fLib.getDataFromPropertiesFile("username");
+		String UN = System.getProperty("username"); //To accept mvn parameters from cmd
+		//String PWD = fLib.getDataFromPropertiesFile("password");
+		String PASSWORD = System.getProperty("password"); //To accept mvn parameters from cmd
 		LoginPage lp = new LoginPage(driver);
 		lp.loginToApp(UN, PWD);
 	}
