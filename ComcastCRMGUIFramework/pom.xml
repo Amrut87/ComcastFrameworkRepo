@@ -3,7 +3,7 @@
   <groupId>DataDrivenTesting</groupId>
   <artifactId>DataDrivenTesting</artifactId>
   <version>0.0.1-SNAPSHOT</version>
- 
+
  <dependencies>
  
 <dependency>
@@ -17,7 +17,6 @@
     <groupId>org.testng</groupId>
     <artifactId>testng</artifactId>
     <version>7.10.2</version>
-    <scope>test</scope>
 </dependency>
 
 <dependency>
